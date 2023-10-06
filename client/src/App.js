@@ -1,8 +1,13 @@
+import { Container, AppBar, Typography } from "@mui/material";
+import scenic from './images/scenic.png';
 const App = () => {
   return (
-    <div>
-      <h1>App</h1>
-    </div>
+    <Container maxWidth="lg">
+      <AppBar position="static" color="inherit">
+        <Typography variant="h2" align="center">Scenic_Places</Typography>
+        <img  src={scenic} alt="scenic_places" height="60" width={40}/>
+      </AppBar>
+    </Container>
   );
 };
 
