@@ -1,7 +1,10 @@
+import useStyles from "./styles";
+
+
 const Post = () => {
-    return (
-        <h1>POST</h1>
-    )
-}
+  const classes = useStyles();
+  
+  return <h1 className={classes.post} >POST</h1>;
+};
 
 export default Post;
