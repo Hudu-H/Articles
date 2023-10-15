@@ -10,8 +10,9 @@ import scenic from "./images/scenic.png";
 import useStyles from "./styles";
 
 const App = () => {
-  const dispatch = useDispatch();
   const classes = useStyles();
+  const dispatch = useDispatch();
+  
 
   useEffect(() => {
       dispatch(getPosts())
