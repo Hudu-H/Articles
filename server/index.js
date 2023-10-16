@@ -6,19 +6,18 @@ import cors from "cors";
 //internal imports
 import postRoutes from "./routes/posts.js";
 import dotenv from "dotenv";
-dotenv.config();
+dotenv.config({ path: "/Users/huduhamed/projects/scenic_places/.env"});
 
 const app = express();
-
-app.use("/posts", postRoutes);
 
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
-const CONNECTION_URL = process.env.MONGO_APIKEY;
-const PORT = process.env.PORT || 5000;
+app.use("/posts", postRoutes);
 
+const CONNECTION_URL = MONGODB_URL;
+const PORT = process.env.PORT;
 
 //accepts two different parameters before but not now
 mongoose
