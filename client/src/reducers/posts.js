@@ -1,10 +1,10 @@
-export default (posts = [], action) => {
+export const post = (posts = [], action) => {
     switch (action.type) {
         case 'FETCH_ALL':
-            return action.payload;
+            return action;
         case 'CREATE':
-            return [...posts, action.payload];
-        default:
             return posts;
+        default:
+            return;
     }
 }
