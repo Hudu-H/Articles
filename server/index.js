@@ -8,6 +8,7 @@ import postRoutes from "./routes/posts.js";
 import dotenv from "dotenv";
 dotenv.config({ path: "/Users/huduhamed/projects/scenic_places/.env"});
 
+
 const app = express();
 
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
