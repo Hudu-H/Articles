@@ -16,7 +16,7 @@ app.use(cors());
 
 app.use("/posts", postRoutes);
 
-const CONNECTION_URL = MONGODB_URL;
+const CONNECTION_URL = process.env.MONGODB_URL;
 const PORT = process.env.PORT;
 
 //accepts two different parameters before but not now
