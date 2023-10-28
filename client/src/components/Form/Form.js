@@ -12,7 +12,7 @@ const Form = ({ currentId, setCurrentId }) => {
     title: "",
     message: "",
     tags: "",
-    selectedField: "",
+    selectedFile: "",
   });
 
   const post = useSelector((state) =>
@@ -44,7 +44,7 @@ const Form = ({ currentId, setCurrentId }) => {
       title: " ",
       message: " ",
       tags: " ",
-      selectedField: " ",
+      selectedFile: " ",
     });
   };
 
@@ -100,7 +100,7 @@ const Form = ({ currentId, setCurrentId }) => {
             type="file"
             multiple={false}
             onDone={({ base64 }) =>
-              setPostData({ ...postData, selectedField: base64 })
+              setPostData({ ...postData, selectedFile: base64 })
             }
           />
         </div>
