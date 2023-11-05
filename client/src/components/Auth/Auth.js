@@ -9,6 +9,7 @@ import {
 } from "@material-ui/core";
 import { GoogleLogin } from "react-google-login";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import Icon from "./icon";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
@@ -21,6 +22,7 @@ const Auth = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isSignup, setIsSignUp] = useState(false);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleShowPassword = () => {
     setShowPassword((prevShowPassword) => !prevShowPassword);
@@ -42,10 +44,9 @@ const Auth = () => {
     try {
       dispatch({
         type: "AUTH",
-        data: { result, token }
+        data: { result, token },
       });
-      // navigate.push("/");
-      
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
@@ -58,7 +59,8 @@ const Auth = () => {
 
   gapi.load("client:auth2", () => {
     gapi.auth2.init({
-      clientId: 'GOOGLE ID',
+      clientId:
+        "GOOGLE ID",
       plugin_name: "scenic",
     });
   });
