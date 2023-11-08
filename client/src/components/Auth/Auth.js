@@ -80,7 +80,7 @@ const Auth = () => {
   gapi.load("client:auth2", () => {
     gapi.auth2.init({
       clientId:
-        "GOOGLE ID",
+        "63954070596-1bu7vreuce2vmfamuufuu744887vcnfs.apps.googleusercontent.com",
       plugin_name: "scenic",
     });
   });
@@ -143,7 +143,7 @@ const Auth = () => {
             {isSignup ? "Sign Up" : "Sign In"}
           </Button>
           <GoogleLogin
-            clientId="GOOGLE ID"
+            clientId="63954070596-1bu7vreuce2vmfamuufuu744887vcnfs.apps.googleusercontent.com"
             render={(renderProps) => (
               <Button
                 className={classes.googleButton}
