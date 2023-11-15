@@ -1,23 +1,29 @@
-import React from 'react'
+import React from "react";
 import { AUTH } from "../constants/actionTypes";
 import * as api from "../api";
 
 export const signin = (formData, navigate) => async (dispatch) => {
-try {
+  try {
     /// log in user
+    const { data } = await api.signIn(formData);
 
-    navigate('/')
-} catch (error) {
-    console.log(error)
-}
-}
+    dispatch({ type: AUTH, data })
+
+    navigate("/");
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 export const signup = (formData, navigate) => async (dispatch) => {
-    try {
-        /// sign up user
-    
-        navigate('/')
-    } catch (error) {
-        console.log(error)
-    }
-    }
+  try {
+    /// sign up user
+    const { data } = await api.signUp(formData);
+
+    dispatch({ type: AUTH, data })
+
+    navigate("/");
+  } catch (error) {
+    console.log(error);
+  }
+};
