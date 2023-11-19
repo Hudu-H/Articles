@@ -16,7 +16,7 @@ import { gapi } from "gapi-script";
 import Icon from "./icon";
 import useStyles from "./styles";
 import Input from "./Input";
-import { signin, signup } from '../../actions/auth';
+import { signin, signup } from "../../actions/auth";
 
 const initialStata = {
   firstName: "",
@@ -42,9 +42,9 @@ const Auth = () => {
     e.preventDefault();
 
     if (isSignup) {
-      dispatch(signup(formData, navigate))
+      dispatch(signup(formData, navigate));
     } else {
-      dispatch(signin(formData, navigate))
+      dispatch(signin(formData, navigate));
     }
   };
 
@@ -79,8 +79,7 @@ const Auth = () => {
 
   gapi.load("client:auth2", () => {
     gapi.auth2.init({
-      clientId:
-        "GOOGLE ID",
+      clientId: "GOOGLE ID",
       plugin_name: "scenic",
     });
   });
@@ -123,6 +122,7 @@ const Auth = () => {
               handleChange={handleChange}
               type={showPassword ? "text" : "password"}
               handleShowPassword={handleShowPassword}
+              autocomplete="off"
             />
             {isSignup && (
               <Input
@@ -130,6 +130,7 @@ const Auth = () => {
                 label="Repeat Password"
                 handleChange={handleChange}
                 type="password"
+                autocomplete="off"
               />
             )}
           </Grid>

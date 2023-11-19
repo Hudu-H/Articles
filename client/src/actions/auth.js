@@ -1,4 +1,3 @@
-import React from "react";
 import { AUTH } from "../constants/actionTypes";
 import * as api from "../api";
 
@@ -7,7 +6,7 @@ export const signin = (formData, navigate) => async (dispatch) => {
     /// log in user
     const { data } = await api.signIn(formData);
 
-    dispatch({ type: AUTH, data })
+    dispatch({ type: AUTH, data });
 
     navigate("/");
   } catch (error) {
@@ -20,7 +19,7 @@ export const signup = (formData, navigate) => async (dispatch) => {
     /// sign up user
     const { data } = await api.signUp(formData);
 
-    dispatch({ type: AUTH, data })
+    dispatch({ type: AUTH, data });
 
     navigate("/");
   } catch (error) {
