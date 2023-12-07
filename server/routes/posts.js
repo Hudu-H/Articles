@@ -3,14 +3,14 @@ import express from "express";
 //internal imports
 import {
   getPosts,
+  getPost,
   createPost,
   updatePost,
   deletePost,
   likePost,
 } from "../controllers/posts.js";
-import auth from "../middleware/auth.js";
-
 const router = express.Router();
+import auth from "../middleware/auth.js";
 
 //http://localhost:5000/posts
 router.get("/", getPosts);

@@ -1,9 +1,13 @@
 //this folder will help separate and keep clean our route/posts.js file because of the numerous function calls.
 //https://www.restapitutorial.com/httpstatuscodes.html
 
-//internal imports
+import express from "express";
 import mongoose from "mongoose";
+
+//internal imports
 import PostMessage from "../models/postMessage.js";
+
+const router = express.Router();
 
 export const getPosts = async (req, res) => {
   try {
@@ -28,7 +32,7 @@ export const getPost = async (req, res) => {
 };
 
 export const createPost = async (req, res) => {
-  const post = req.body;
+  const { post } = req.body;
 
   const newPostMessage = new PostMessage({
     ...post,
