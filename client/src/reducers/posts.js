@@ -18,8 +18,6 @@ export default (posts = [], action) => {
 
     case CREATE:
       return [...posts, action.payload];
-    default:
-      return posts;
 
     case UPDATE:
       return posts.map((post) =>
@@ -28,5 +26,7 @@ export default (posts = [], action) => {
 
     case DELETE:
       return posts.filter((post) => post._id !== action.payload);
+    default:
+      return posts;
   }
 };
