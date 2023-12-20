@@ -9,8 +9,9 @@ import {
   deletePost,
   likePost,
 } from "../controllers/posts.js";
-const router = express.Router();
 import auth from "../middleware/auth.js";
+
+const router = express.Router();
 
 //http://localhost:5000/posts
 router.get("/", getPosts);

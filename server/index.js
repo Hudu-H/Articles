@@ -21,7 +21,6 @@ app.use("/user", userRoutes);
 const CONNECTION_URL = process.env.MONGODB_URL;
 const PORT = process.env.PORT || 5000;
 
-//accepts two different parameters before but not now
 mongoose
   .connect(CONNECTION_URL)
   .then(() =>
