@@ -3,7 +3,6 @@ import express from "express";
 //internal imports
 import {
   getPosts,
-  getPost,
   createPost,
   updatePost,
   deletePost,
