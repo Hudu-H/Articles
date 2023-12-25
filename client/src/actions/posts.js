@@ -14,13 +14,13 @@ export const getPosts = () => async (dispatch) => {
 
     dispatch({ type: FETCH_ALL, payload: data });
   } catch (error) {
-    console.log(error.message);
+    console.log(error);
   }
 };
 
-export const createPost = (post) => async (dispatch) => {
+export const createPost = (newPost) => async (dispatch) => {
   try {
-    const { data } = await api.createPost(post);
+    const { data } = await api.createPost(newPost);
 
     dispatch({ type: CREATE, payload: data });
   } catch (error) {
