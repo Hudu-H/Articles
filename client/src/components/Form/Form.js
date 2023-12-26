@@ -27,7 +27,7 @@ const Form = ({ currentId, setCurrentId }) => {
   }, [post]);
 
   const clear = () => {
-    setCurrentId(null);
+    setCurrentId(0);
     setPostData({
       title: " ",
       message: " ",
@@ -69,7 +69,7 @@ const Form = ({ currentId, setCurrentId }) => {
         onSubmit={handleSubmit}
       >
         <Typography variant="h6">
-          {currentId ? "Editing" : "Creating"} a Memory
+          {currentId ? `Editing ${post.title}` : "Creating a Memory"}
         </Typography>
         <TextField
           name="title"
@@ -85,7 +85,7 @@ const Form = ({ currentId, setCurrentId }) => {
           label="Message"
           fullWidth
           multiline
-          rows={4}
+          minRows={4}
           value={postData.message}
           onChange={(e) =>
             setPostData({ ...postData, message: e.target.value })

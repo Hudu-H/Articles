@@ -73,7 +73,6 @@ const Auth = () => {
   };
 
   const googleFailure = (error) => {
-    console.log(error);
     console.log("Google Sign In was unsuccessful. Try again Later");
   };
 
@@ -91,7 +90,9 @@ const Auth = () => {
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
         </Avatar>
-        <Typography variant="h5">{isSignup ? "Sign Up" : "Sign In"}</Typography>
+        <Typography component="h1" variant="h5">
+          {isSignup ? "Sign Up" : "Sign In"}
+        </Typography>
         <form className={classes.form} onSubmit={handleSubmit}>
           <Grid container spacing={2}>
             {isSignup && (
@@ -123,7 +124,6 @@ const Auth = () => {
               handleChange={handleChange}
               type={showPassword ? "text" : "password"}
               handleShowPassword={handleShowPassword}
-              autocomplete="off"
             />
             {isSignup && (
               <Input
@@ -131,7 +131,6 @@ const Auth = () => {
                 label="Repeat Password"
                 handleChange={handleChange}
                 type="password"
-                autocomplete="off"
               />
             )}
           </Grid>

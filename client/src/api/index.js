@@ -5,7 +5,7 @@ const API = axios.create({ baseURL: "http://localhost:5000" });
 
 API.interceptors.request.use((req) => {
   if (localStorage.getItem("profile")) {
-    req.headers.authorization = `Bearer ${
+    req.headers.Authorization = `Bearer ${
       JSON.parse(localStorage.getItem("profile")).token
     }`;
   }
@@ -15,7 +15,7 @@ API.interceptors.request.use((req) => {
 
 export const fetchPosts = () => API.get("/posts");
 
-export const createPost = (id, newPost) => API.post(`/posts/${id}`, newPost);
+export const createPost = (newPost) => API.post("/posts", newPost);
 
 export const updatePost = (id, updatedPost) =>
   API.patch(`/posts/${id}`, updatedPost);
