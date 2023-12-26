@@ -3,6 +3,7 @@ import express from "express";
 //internal imports
 import {
   getPosts,
+  getPost,
   createPost,
   updatePost,
   deletePost,
@@ -14,6 +15,7 @@ const router = express.Router();
 
 //http://localhost:5000/posts
 router.get("/", getPosts);
+router.get("/:id");
 router.post("/", auth, createPost);
 router.patch("/:id", auth, updatePost);
 router.delete("/:id", auth, deletePost);

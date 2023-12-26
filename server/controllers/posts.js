@@ -40,7 +40,7 @@ export const createPost = async (req, res) => {
     createdAt: new Date().toISOString(),
   });
   try {
-    await newPost.save();
+    await newPostMessage.save();
 
     res.status(201).json(newPostMessage);
   } catch (error) {
@@ -50,16 +50,13 @@ export const createPost = async (req, res) => {
 
 export const updatePost = async (req, res) => {
   const { id } = req.params;
-  const post = req.body;
+  const { title, message, creator, selectedFile, tags } = req.body;
 
   if (!mongoose.Types.ObjectId.isValid(id))
     return res.status(404).send(`No post with id: ${id}`);
 
-  const updatedPost = await PostMessage.findByIdAndUpdate(
-    id,
-    { ...post },
-    { new: true }
-  );
+  const updatedPost = { creator, title, message, tags, selectedFile, _id: id };
+  await PostMessage.findByIdAndUpdate(id, updatedPost, { new: true });
 
   res.json(updatedPost);
 };
@@ -99,7 +96,7 @@ export const likePost = async (req, res) => {
     new: true,
   });
 
-  res.json(updatedPost);
+  res.status(200).json(updatedPost);
 };
 
 export default router;
