@@ -8,7 +8,7 @@ import Posts from "../Posts/Posts";
 import Form from "../Form/Form";
 
 const Home = () => {
-  const [currentId, setCurrentId] = useState(0);
+  const [currentId, setCurrentId] = useState(0); //setting this state to null caused me a lot of time and money lol
   const dispatch = useDispatch();
 
   useEffect(() => {

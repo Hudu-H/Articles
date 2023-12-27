@@ -13,7 +13,7 @@ import auth from "../middleware/auth.js";
 
 const router = express.Router();
 
-//http://localhost:5000/posts
+//http://localhost:5000/posts routes to endpoints on the frontend.
 router.get("/", getPosts);
 router.get("/:id");
 router.post("/", auth, createPost);

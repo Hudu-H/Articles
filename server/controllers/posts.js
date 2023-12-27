@@ -88,7 +88,7 @@ export const likePost = async (req, res) => {
     //like the post
     post.likes.push(req.userId);
   } else {
-    //dislike a post
+    //dislike a post, when liked twice, it dislikes the post.
     post.likes = post.likes.filter((id) => id !== String(req.userId));
   }
 

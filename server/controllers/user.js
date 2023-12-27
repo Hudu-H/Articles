@@ -20,7 +20,7 @@ export const signin = async (req, res) => {
     if (!isPasswordCorrect)
       return res.status(400).json({ message: "invalid credentials." });
 
-    // the test argument is supposed to be the secret string.
+    // the 'test' argument is supposed to be the secret string.
 
     const token = jwt.sign(
       { email: existingUser.email, id: existingUser._id },

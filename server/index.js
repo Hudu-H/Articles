@@ -28,6 +28,5 @@ mongoose
   )
   .catch((error) => console.log(error));
 
-// mongoose.set("useFindAndModify", false);
-
+//database used for this particular project
 //https://www.mongodb.com/atlas/database
