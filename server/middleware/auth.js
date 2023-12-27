@@ -15,7 +15,7 @@ const auth = async (req, res, next) => {
     } else {
       decodedData = jwt.decode(token);
 
-      req.userId = decodedData?.sub; //a name google use to differentiate every user.
+      req.userId = decodedData?.sub; //'sub' a name google use to differentiate every user.
     }
 
     next();
