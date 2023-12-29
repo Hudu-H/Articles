@@ -72,9 +72,8 @@ const Auth = () => {
     }
   };
 
-  const googleFailure = (error) => {
+  const googleError = () =>
     console.log("Google Sign In was unsuccessful. Try again Later");
-  };
 
   gapi.load("client:auth2", () => {
     gapi.auth2.init({
@@ -159,7 +158,7 @@ const Auth = () => {
               </Button>
             )}
             onSuccess={googleSuccess}
-            onFailure={googleFailure}
+            onFailure={googleError}
             cookiePolicy="single_host_origin"
           />
           <Grid container justifyContent="flex-end">
