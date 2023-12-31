@@ -24,13 +24,14 @@ function useQuery() {
 }
 
 const Home = () => {
-  const [currentId, setCurrentId] = useState(0); //setting this state to null caused me a lot of time and money lol
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const query = useQuery();
-  const navigate = useNavigate();
   const page = query.get("page") || 1;
   const searchQuery = query.get("searchQuery");
   const classes = useStyles();
+
+  const [currentId, setCurrentId] = useState(0);
   const [search, setSearch] = useState("");
   const [tags, setTags] = useState([]);
 
