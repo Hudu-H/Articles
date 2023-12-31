@@ -10,10 +10,23 @@ import PostMessage from "../models/postMessage.js";
 const router = express.Router();
 
 export const getPosts = async (req, res) => {
-  try {
-    const postMessages = await PostMessage.find();
+  const { page } = req.query;
 
-    res.status(200).json(postMessages);
+  try {
+    const LIMIT = 6;
+    const startIndex = (Number(page) - 1) * LIMIT; //GET THE START INDEX OF EVERY PAGE.
+    const total = await PostMessage.countDocuments({});
+
+    const posts = await PostMessage.find()
+      .sort({ _id: -1 })
+      .limit(LIMIT)
+      .skip(startIndex); //THIS IS TO FETCH NEWEST POST AND PROVIDE ONLY FIRST 6 PER PAGE.
+
+    res.status(200).json({
+      data: posts,
+      currentPage: Number(page),
+      numberOfPages: Math.ceil(total / LIMIT), // THIS GIVES THE TOTAL NUMBER OF PAGES.
+    });
   } catch (error) {
     res.status(404).json({ message: error.message });
   }
