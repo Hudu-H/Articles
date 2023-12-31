@@ -44,7 +44,7 @@ const Navbar = () => {
           variant="h2"
           align="center"
         >
-          Scenic-Places
+          Scenes
         </Typography>
         <img
           className={classes.image}
