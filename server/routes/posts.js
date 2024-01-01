@@ -17,7 +17,7 @@ const router = express.Router();
 //http://localhost:5000/posts routes to endpoints on the frontend.
 router.get("/search", getPostsBySearch);
 router.get("/", getPosts);
-router.get("/:id");
+router.get("/:id", getPost);
 router.post("/", auth, createPost);
 router.patch("/:id", auth, updatePost);
 router.delete("/:id", auth, deletePost);
