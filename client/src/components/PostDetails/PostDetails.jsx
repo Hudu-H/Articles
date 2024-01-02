@@ -12,8 +12,7 @@ import { useParams, useNavigate } from "react-router-dom";
 //internal imports
 import useStyles from "./styles";
 import { getPost, getPostsBySearch } from "../../actions/posts";
-import CommentSection from "./commentSection";
-
+import CommentSection from "./CommentSection";
 const PostDetails = () => {
   const { post, posts, isLoading } = useSelector((state) => state.posts);
   const dispatch = useDispatch();
