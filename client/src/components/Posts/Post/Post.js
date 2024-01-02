@@ -21,8 +21,8 @@ import { deletePost, likePost } from "../../../actions/posts";
 const Post = ({ post, setCurrentId }) => {
   const classes = useStyles();
   const dispatch = useDispatch();
-  const user = JSON.parse(localStorage.getItem("profile"));
   const navigate = useNavigate();
+  const user = JSON.parse(localStorage.getItem("profile"));
 
   const Likes = () => {
     if (post.likes.length > 0) {
@@ -51,7 +51,7 @@ const Post = ({ post, setCurrentId }) => {
     );
   };
 
-  const openPost = (e) => {
+  const openPost = () => {
     navigate(`/posts/${post._id}`);
   }; //this is to route on the post currently toggled
 

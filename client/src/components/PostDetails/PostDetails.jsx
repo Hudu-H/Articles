@@ -24,7 +24,7 @@ const PostDetails = () => {
     dispatch(getPost(id));
   }, [id]);
 
-  if (!posts) return null;
+  if (!post) return null;
 
   if (isLoading) {
     return (
