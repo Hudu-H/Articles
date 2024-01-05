@@ -43,7 +43,7 @@ const Home = () => {
         `/posts/search?searchQuery=${search || "none"}&tags=${tags.join(",")}`
       );
     } else {
-      navigate.push("/");
+      navigate("/");
     }
   };
 

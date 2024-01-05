@@ -51,13 +51,18 @@ const Post = ({ post, setCurrentId }) => {
     );
   };
 
-  const openPost = () => {
+  const openPost = (e) => {
     navigate(`/posts/${post._id}`);
   }; //this is to route on the post currently toggled
 
   return (
     <Card className={classes.card} raised elevation={6}>
-      <ButtonBase className={classes.cardAction} onClick={openPost}>
+      <ButtonBase
+        className={classes.cardAction}
+        onClick={openPost}
+        name="test"
+        component="span"
+      >
         <CardMedia
           className={classes.media}
           image={post.selectedFile}
