@@ -19,7 +19,7 @@ const CommentSection = ({ post }) => {
     const newComments = await dispatch(commentPost(finalComment), post._id);
 
     setComments(newComments);
-    setComment("");
+    setComment(" ");
 
     commentsRef.current.scrollIntoView({ behavior: "smooth" });
   };
