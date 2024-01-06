@@ -51,7 +51,7 @@ const Post = ({ post, setCurrentId }) => {
     );
   };
 
-  const openPost = (e) => {
+  const openPost = () => {
     navigate(`/posts/${post._id}`);
   }; //this is to route on the post currently toggled
 

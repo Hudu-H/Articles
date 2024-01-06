@@ -34,6 +34,8 @@ const PostDetails = () => {
 
   if (!post) return null;
 
+  const openPost = (_id) => navigate(`/posts/${_id}`);
+
   if (isLoading) {
     return (
       <Paper elevation={6} className={classes.loadingPaper}>
@@ -43,8 +45,6 @@ const PostDetails = () => {
   }
 
   const recommendedPosts = posts.filter(({ _id }) => _id !== post._id);
-
-  const openPost = (_id) => navigate(`/posts/${_id}`);
 
   return (
     <Paper style={{ padding: "20px", borderRadius: "15px" }} elevation={6}>
