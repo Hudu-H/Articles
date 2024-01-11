@@ -5,8 +5,7 @@ import { useDispatch } from "react-redux";
 import decode from "jwt-decode";
 
 import useStyles from "./styles";
-import sceneLogo from "../../images/sceneLogo.png";
-import sceneText from "../../images/sceneText.png";
+import articlesLogo from "../../images/articlesLogo.png";
 
 const Navbar = () => {
   const classes = useStyles();
@@ -38,13 +37,7 @@ const Navbar = () => {
   return (
     <AppBar className={classes.appBar} position="static" color="inherit">
       <Link to="/" className={classes.brandContainer}>
-        <img src={sceneText} alt="icon" height="45px" />
-        <img
-          className={classes.image}
-          src={sceneLogo}
-          alt="scenic_places"
-          height="40px"
-        />
+        <img src={articlesLogo} alt="icon" height="55px" />
       </Link>
       <Toolbar className={classes.toolbar}>
         {user ? (
