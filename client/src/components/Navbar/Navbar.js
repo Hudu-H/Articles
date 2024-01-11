@@ -4,6 +4,7 @@ import { AppBar, Avatar, Button, Toolbar, Typography } from "@material-ui/core";
 import { useDispatch } from "react-redux";
 import decode from "jwt-decode";
 
+//internal imports
 import useStyles from "./styles";
 import articlesLogo from "../../images/articlesLogo.png";
 

@@ -6,10 +6,11 @@ import {
   Divider,
 } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
-import moment from "moment"; // a js library that deals with time.
+import moment from "moment";
 import { useParams, useNavigate } from "react-router-dom";
 
 //internal imports
+import articles from "../../images/articles.jpg";
 import useStyles from "./styles";
 import { getPost, getPostsBySearch } from "../../actions/posts";
 import CommentSection from "./CommentSection";
@@ -79,15 +80,12 @@ const PostDetails = () => {
         <div className={classes.imageSection}>
           <img
             className={classes.media}
-            src={
-              post.selectedFile ||
-              "https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png"
-            }
+            src={post.selectedFile || <img src={articles} alt="books" />}
             alt={post.title}
           />
         </div>
       </div>
-      {recommendedPosts.length && (
+      {!!recommendedPosts.length && (
         <div className={classes.section}>
           <Typography gutterBottom variant="h5">
             You might also like:
