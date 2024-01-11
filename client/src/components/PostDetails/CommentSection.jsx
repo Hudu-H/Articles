@@ -7,19 +7,19 @@ import useStyles from "./styles";
 import { commentPost } from "../../actions/posts";
 
 const CommentSection = ({ post }) => {
-  const classes = useStyles();
+  const user = JSON.parse(localStorage.getItem("profile"));
+  const [comment, setComment] = useState(" ");
   const dispatch = useDispatch();
   const [comments, setComments] = useState(post?.comments);
-  const [comment, setComment] = useState(" ");
-  const user = JSON.parse(localStorage.getItem("profile"));
+  const classes = useStyles();
   const commentsRef = useRef();
 
   const handleComment = async () => {
     const finalComment = `${user?.result?.name}: ${comment}`;
     const newComments = await dispatch(commentPost(finalComment), post._id);
 
-    setComments(newComments);
     setComment("");
+    setComments(newComments);
 
     commentsRef.current.scrollIntoView({ behavior: "smooth" });
   };
