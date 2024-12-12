@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# Articles
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This page was built with **React**, **React-Redux** for the frontend and **Express.js & Node.js** for backend with **Mongodb** as the database.
 
-## Available Scripts
+## Motive
 
-In the project directory, you can run:
+The intention of building this project was part of a process to learn react-redux, that is to pass data and manage state accross different pages within an application. This enable users to interact with the page with all CRUD operations, that create posts, read, update, or delete posts they created.
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![React.js](https://img.shields.io/badge/React.js-61DAFB?style=for-the-badge&logo=react&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![React-Redux](https://img.shields.io/badge/React--Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white)
+![JWT](https://img.shields.io/badge/JSON_Web_Token-000000?style=for-the-badge&logo=json-web-tokens&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
+![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+![React Google Login](https://img.shields.io/badge/React_Google_Login-4285F4?style=for-the-badge&logo=google&logoColor=white)
+![Material UI](https://img.shields.io/badge/Material_UI-0081CB?style=for-the-badge&logo=material-ui&logoColor=white)
+![Axios](https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white)
+![Moment.js](https://img.shields.io/badge/Moment.js-8B5CF6?style=for-the-badge&logo=moment.js&logoColor=white)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+- User authentication & authorization using JWT token
+- Real-time state updates made possible using redux.
+- MongoDB integration as database source
+- React google login integration
+- moment.js for posts dates and time formats
+- Pagination support to improve performance
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Setup Steps
 
-### `npm run build`
+1. Clone repository
+2. cd into either client or server directory first
+3. `npm install` or `npm install --legacy-peer-deps` to ignore peer dependency flags
+4. configure `.env or .env.local` locally
+5. connect mongoose before running the server
+6. voilà!
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Setup Environment Variables (.env.loca)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+MONGODB_URL=
+PORT=
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Status
 
-### `npm run eject`
+All current features funtional, user can create, update, edit and delete post.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Todo
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- [ ] Implement comments UI under Posts
+- [ ] Testing
+- [ ] Restructure dashboard and postcard
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Posts page](src/images/readMe.png)
