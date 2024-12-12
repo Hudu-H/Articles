@@ -56,4 +56,4 @@ All current features funtional, user can create, update, edit and delete post.
 - [ ] Testing
 - [ ] Restructure dashboard and postcard
 
-![Posts page](src/images/readMe.png)
+![Posts page](client/src/images/readMe.png)
