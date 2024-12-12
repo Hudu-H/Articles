@@ -18,8 +18,9 @@ app.use(cors());
 app.use("/posts", postRoutes);
 app.use("/user", userRoutes);
 
-const CONNECTION_URL = process.env.MONGODB_URL;
-const PORT = process.env.PORT || 5000;
+const CONNECTION_URL =
+  "mongodb+srv://ahmedhudu21:ahmedhudu21123456@cluster0.opwt0ug.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const PORT = 8080;
 
 mongoose
   .connect(CONNECTION_URL)
@@ -27,6 +28,8 @@ mongoose
     app.listen(PORT, () => console.log(`Server running on port: ${PORT}`))
   )
   .catch((error) => console.log(error));
+
+// mongoose.set("useFindAndModify", false);
 
 //database used for this particular project
 //https://www.mongodb.com/atlas/database
